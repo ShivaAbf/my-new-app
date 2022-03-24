@@ -1,0 +1,23 @@
+.head {
+    border: 3px solid black;
+  }
+  .city {
+    color: chocolate;
+    font-size: 15px;
+  }
+  
+  .weather {
+    font-size: 50px;
+    margin-top: -10px;
+  }
+  .curWeather {
+    font-size: 170px;
+  }
+  
+  .Isfahan {
+    padding: 250px 0px 0px 15px;
+  }
+  
+  .week {
+    margin-top: 5px;
+  }
