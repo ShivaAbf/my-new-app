@@ -40,7 +40,8 @@ let input = document.querySelector("#enter-city");
 // console.log(form.value);
 function showWeather(information){
   let weath = document.querySelector("#weath")
-  weath.innerHTML = `${information.data.main.temp}°C`
+  let weather = Math.round(information.data.main.temp);
+  weath.innerHTML = `${weather}°C`
 
 
 }
