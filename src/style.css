@@ -21,3 +21,12 @@
   .week {
     margin-top: 5px;
   }
+  .git {
+    display: inline;
+  }
+  .creator{
+    display: inline;
+  }
+  .creat{
+    margin-left: 30px ;
+  }
