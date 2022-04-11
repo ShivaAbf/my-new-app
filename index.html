@@ -10,21 +10,20 @@
   </head>
   <body>
     <div class="container ">
-      <div class="head mt-4">
+      <div class="head mt-4 weather-app">
       <div class="row">
         <div class="col-8 mt-3">
-          <div class="row">
+          <div class="row mx-4">
             <div class="col city"><p>Tehran</p></div>
             <div class="col city"><p>Yazd</p></div>
             <div class="col city"><p>Shiraz</p></div>
-            <div class="col city">
-              <p>Mashhad</p>
-            </div>
+            <div class="col city"><p>Mashhad</p></div>
+             
           </div>
-          <form>
+          <form class="mx-4 ">
             <div class="row">
               <div class="col-8">
-                <input type="text" id="enter-city" placeholder="Enter a city" />
+                <input class="form-control" type="text" id="enter-city" placeholder="Enter a city.." autocomplete="off" />
               </div>
               <div class="col-4">
                 <button class="btn btn-primary">search</button>
@@ -34,51 +33,72 @@
 
           <div class="row">
             <div class="col-4 Isfahan">
-              <p id="show-city">Isfahan, Iran</p>
-              <p id="date">Sun, January 30</p>
-              <p id="time">5:42 PM</p>
+              <ul class="targetcity">
+              <li id="show-city">Isfahan</li>
+              <li id="date">Sun, January 30</li>
+              <li id="time">5:42 PM</li>
+            </ul>
             </div>
             <div class="col-8">
-              <p class="curWeather">☀︎</p>
-              <small id="weath">15°</small>
+            <ul>
+              <li class="curWeather"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" id="icon"></li>
+              <li id="weath">15  °C |</p><a href="#" id="fahrenheit">°F</a> </li>
+              
+              <li id="desc">clear</li>
+              <li id="humid">Humidity: 16%</li>
+              <li id="wind">wind spead: 16 km/h</li>
+            </ul>
+
             </div>
           </div>
         </div>
         <div class="col-4 mt-3">
           <div class="row">
             <div class="col week">
-              <p>Mon</p>
-              <p class="weather">☀︎</p>
-              <p>17°</p>
+              <ul>
+              <li>Mon</li>
+              <li class="weather my-2">☀︎</li>
+              <li>17°</li>
+            </ul>
             </div>
             <div class="col week">
-              <p>Tue</p>
-              <p class="weather">☁️</p>
-              <p>7°</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col week">
-              <p>Wed</p>
-              <p class="weather">☀︎</p>
-              <p>13°</p>
-            </div>
-            <div class="col week">
-              <p>Thu</p>
-              <p class="weather">☁️</p>
-              <p>5°</p>
+              <ul>
+                <li>Tue</li>
+                <li class="weather my-2">☀︎</li>
+                <li>17°</li>
+              </ul>
             </div>
           </div>
           <div class="row">
             <div class="col week">
-              <p>Fri</p>
-              <p class="weather">☁️</p>
-              <p>8°</p>
+              <ul>
+                <li>Wed</li>
+                <li class="weather my-2">☀︎</li>
+                <li>17°</li>
+              </ul>
             </div>
             <div class="col week">
-              <p>Sat</p>
-              <p class="weather">☁️</p>
-              <p>5°</p>
+              <ul>
+                <li>Thur</li>
+                <li class="weather my-2">☀︎</li>
+                <li>17°</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col week">
+              <ul>
+                <li>Fri</li>
+                <li class="weather my-2">☀︎</li>
+                <li>17°</li>
+              </ul>
+            </div>
+            <div class="col week">
+              <ul>
+                <li>Sat</li>
+                <li class="weather my-2">☀︎</li>
+                <li>17°</li>
+              </ul>
             </div>
           </div>
         </div>

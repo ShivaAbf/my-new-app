@@ -1,3 +1,7 @@
+body{
+  font-family: Cerebri-Sans,Helvetica,Arial,sans-serif;
+
+}
 .head {
     border: 3px solid black;
   }
@@ -28,5 +32,25 @@
     display: inline;
   }
   .creat{
-    margin-left: 30px ;
+    margin-left: 270px;
   }
+  li {
+    list-style-type: none;
+}
+
+.weather-app{
+  max-width: 800px;
+  border-radius: 5px;
+  margin: 40px auto;
+
+
+}
+#show-city ,#weath {
+  font-size: 24px;
+  font-weight: 100px;
+  line-height: 30px;
+}
+
+#fahrenheit , #cel{
+  display: inline;
+}
