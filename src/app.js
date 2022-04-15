@@ -36,7 +36,7 @@ function showTime(currentTime){
 }
 
 showTime()
-let form = document.querySelector("form");
+
 let input = document.querySelector("#enter-city");
 let icon = document.querySelector("#icon")
 
@@ -46,8 +46,9 @@ let icon = document.querySelector("#icon")
 function showWeather(information){
 
   let weath = document.querySelector("#weath")
-  
-  weath.innerHTML =  Math.round(information.data.main.temp);
+  celsiusTemp = information.data.main.temp
+  console.log(celsiusTemp)
+  weath.innerHTML =  Math.round(celsiusTemp);
   let description = document.querySelector("#desc")
    description.innerHTML= information.data.weather[0].main;
   let humidity = document.querySelector("#humid");
@@ -74,13 +75,29 @@ function search(city){
   function showCity(cityValue) {
     cityValue = document.querySelector("#show-city");
     event.preventDefault();
-  
+    let celsiusTemp = null;
     cityValue.innerHTML = input.value;
     search(input.value);
   }
-
-
-
-  form.addEventListener("submit", showCity);
-   let fahrenheit = document.querySelector("#fahrenheit")
+function showFahrenheit(event){
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9/5) + 32
+  let temperature = document.querySelector("#weath")
+  temperature.innerHTML = Math.round(fahrenheitTemp) 
   
+}
+function showCelcius(event){
+  event.preventDefault();
+  let temperature =document.querySelector("#weath")
+  temperature.innerHTML = Math.round(celsiusTemp)
+}
+
+
+  let form = document.querySelector("form");
+  form.addEventListener("submit", showCity);
+
+   let fahrenheit = document.querySelector("#fahrenheit")
+   fahrenheit.addEventListener("click", showFahrenheit)
+  
+   let celcius = document.querySelector("#cel")
+   celcius.addEventListener("click", showCelcius)
