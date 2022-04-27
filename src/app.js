@@ -2,7 +2,6 @@ let dates = document.querySelector("#date");
 let time = document.querySelector("#time");
 function showTime(currentTime){
   let currentDate = new Date();
-  // console.log(currentDate);
   let weekDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let week = weekDay[currentDate.getDay()];
   let mounth = [
@@ -40,6 +39,11 @@ showTime()
 let input = document.querySelector("#enter-city");
 let icon = document.querySelector("#icon")
 
+function getCoordinates(Coordinate){
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${Coordinate.lat}&lon=${Coordinate.lon}&appid=8269c637bf5ee65986b1b74910708602&units=metric`
+  console.log(apiUrl)
+  axios.get(apiUrl).then(showForecast)
+}
 
 
 // console.log(form.value);
@@ -59,7 +63,8 @@ icon.setAttribute(
   "src",
   `http://openweathermap.org/img/wn/${information.data.weather[0].icon}@2x.png`
 );
-  
+console.log(information)
+getCoordinates(information.data.coord)
 
 }
 function search(city){
@@ -92,6 +97,27 @@ function showCelcius(event){
   temperature.innerHTML = Math.round(celsiusTemp)
 }
 
+function showForecast(response){
+  console.log(response.data.daily)
+  let forecastElement = document.querySelector("#forecast")
+  let weekDay = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = `<div class="row">`
+  weekDay.forEach(function(day){
+    
+    forecastHTML =forecastHTML + `
+    <div class="col-2 week ">
+        <ul>
+        <li><p class="week-day">${day}</p></li>
+        <li class="weather my-2"><img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"></li>
+        <li><span class="min-temp">15°</span>   <span class="max-temp">18°</span></li>
+      </ul>
+      </div>
+  `
+  
+    forecastElement.innerHTML = forecastHTML
+  })
+  forecastHTML = forecastHTML + `</div>`
+}
 
   let form = document.querySelector("form");
   form.addEventListener("submit", showCity);
@@ -101,3 +127,4 @@ function showCelcius(event){
   
    let celcius = document.querySelector("#cel")
    celcius.addEventListener("click", showCelcius)
+ 
