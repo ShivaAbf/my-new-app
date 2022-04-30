@@ -73,6 +73,7 @@ function showCelcius(event){
   let temperature =document.querySelector("#weath")
   temperature.innerHTML = Math.round(celsiusTemp)
 }
+
 function formatDay(timeNumber, index){
   console.log(index)
 let date = new Date(timeNumber * 1000);
@@ -82,7 +83,6 @@ return weekDay[day]
 }
 
 function showForecast(response){
-
   let forecastElement = document.querySelector("#forecast")
   let dailyForecast = response.data.daily;
   console.log(dailyForecast)
@@ -93,7 +93,7 @@ function showForecast(response){
     <div class="col-2 week ">
         <ul>
         <li><p class="week-day">${formatDay(responseDay.dt)}</p></li>
-        <li class="weather my-2"><img src="http://openweathermap.org/img/wn/${responseDay.weather[0].icon}@2x.png"></li>
+        <li class="weather"><img src="http://openweathermap.org/img/wn/${responseDay.weather[0].icon}@2x.png"></li>
         <li><span class="min-temp">${Math.round(responseDay.temp.min)}°</span>   <span class="max-temp">${Math.round(responseDay.temp.max)}°</span></li>
       </ul>
       </div>`
@@ -112,3 +112,4 @@ function showForecast(response){
    let celcius = document.querySelector("#cel")
    celcius.addEventListener("click", showCelcius)
  
+   search("Isfahan")

@@ -16,17 +16,7 @@ body{
     font-size: 50px;
     margin-top: -10px;
   }
-  /* .curWeather {
-    font-size: 170px;
-  } */
-  
-  /* .Isfahan {
-    padding: 250px 0px 0px 15px;
-  } */
-  
-  .week {
-    margin-top: 5px;
-  }
+
   .git {
     display: inline;
   }
@@ -81,4 +71,9 @@ body{
 #date , #time , #humid , #wind , #desc{
   color: #000;
   opacity: 0.5;
+}
+
+a{
+  text-decoration: none;
+  color: #4E944F;
 }
