@@ -12,6 +12,13 @@
       <div class="container">
         <div class="head mt-4 weather-app">
             <div class="row">
+              <div class="row mx-4 my-3">
+                <div class="col city"><p>Tehran</p></div>
+                <div class="col city"><p>Yazd</p></div>
+                <div class="col city"><p>Shiraz</p></div>
+                <div class="col city"><p>Mashhad</p></div>
+            </div>
+            <form class="mx-4 ">
                 <form class="mx-3 my-5">
                     <div class="row">
                       <div class="col-8">
@@ -42,7 +49,17 @@
                           <span class="curWeather"><img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png" id="icon"></span>
                           <span ><span id="weath">15</span><a href="#" id="cel">°C </a> | <a href="#" id="fahrenheit">°F</a> </span>
                      </div>
-                     <div id="forecast"></div>
+                     <div id="forecast">
+                      <div class="row">
+                        <div class="col-2 week ">
+                            <ul>
+                            <li><p class="week-day">Mon</p></li>
+                            <li class="weather my-2"><img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"></li>
+                            <li><span class="min-temp">15°</span>   <span class="max-temp">18°</span></li>
+                          </ul>
+                          </div>
+                      </div> 
+                     </div>
                  </div>
                 
             </div>

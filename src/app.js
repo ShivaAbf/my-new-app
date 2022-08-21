@@ -26,7 +26,7 @@ let input = document.querySelector("#enter-city");
 let icon = document.querySelector("#icon")
 
 function getCoordinates(Coordinate){
-  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${Coordinate.lat}&lon=${Coordinate.lon}&appid=8269c637bf5ee65986b1b74910708602&units=metric`
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${Coordinate.lat}&lon=${Coordinate.lon}&appid=8015ed1d22e33fd7249f1d37945c66fb&units=metric`
   axios.get(apiUrl).then(showForecast)
 }
 
@@ -49,7 +49,8 @@ getCoordinates(information.data.coord)
 }
 
 function search(city){
-apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8269c637bf5ee65986b1b74910708602&units=metric`
+apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8015ed1d22e33fd7249f1d37945c66fb
+&units=metric`
 axios.get(apiUrl).then(showWeather);
 }
 
@@ -85,7 +86,6 @@ return weekDay[day]
 function showForecast(response){
   let forecastElement = document.querySelector("#forecast")
   let dailyForecast = response.data.daily;
-  console.log(dailyForecast)
   let forecastHTML = `<div class="row">`
   dailyForecast.forEach(function(responseDay,index ){
     if(index < 6){
